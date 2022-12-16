@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        
+        <meta charset="utf-8">
+        <title>Registration</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="../css/registration.css">
+        <script src="../JS/jquery-3.6.1.min.js"></script>
+        <script language="javascript" src="../JS/testjs.js"></script>
+            <script>
+                function validate2(){
+                    let  error_string = " ";
+
+                    let fname = document.forms["myForm"]["firstname"].value;
+                    var fnam = (/^[a-zA-Z]+$/.test(fname));
+                    if (fnam == false) {error_string += "First Name: Please only enter alpha characters\n"}
+
+                    let lname = document.forms["myForm"]["lastname"].value;
+                    var lnam = (/^[a-zA-Z]+$/.test(lname));
+                    if (lnam == false) {error_string += "Last Name: Please only enter alpha characters\n"}
+
+                    let number = document.getElementById("phoneNumber").value;
+                    var varnum = (/^\d+$/.test(number));
+                    if (varnum == false) {error_string += "Please enter valid phone\n"}
+
+                    let address = document.forms["myForm"]["username"].value;
+                    var add = (/^[a-zA-Z]+$/.test(address));
+                    if (add == false) {error_string += "Username: Please only enter alpha characters\n"}
+
+                    let eid = document.forms["myForm"]["remail"].value;
+                    var pass = (/^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/.test(eid));
+                    if (pass == false) {error_string += "Please Enter valid Email(name+@+domain.com)\n"}
+
+                    let password = document.forms["myForm"]["rpassword"].value;
+                    var varpass = (/^[A-Za-z0-9!@#$%^&*]{6,16}$/.test(password));
+                    if (varpass == false) {error_string += "Please Enter valid password(A-Z,a-z,0-9)\n"}
+
+
+                    if (fnam == true  && lnam == true && add == true && varnum == true && pass == true) {
+                        storeCookie();                    
+                    }
+                    else
+                    {
+                        alert(error_string);
+                    }
+                }
+            </script>
+    </head>
+    <body>
+        <div class="container col-md-6 p-3"> 
+            <div class="bg-content p-3 rounded-10 my-5 shadow"> 
+                <p class="h4 text-bhagwa">Sign Up</p>
+                <hr> 
+                <form id="myForm"> 
+                    <div class="form-group"> 
+                        <label for="exampleInputEmail1">First Name</label> 
+                        <input type="text" class="form-control rounded-pill border-0" id="firstname" placeholder="Enter first name"> 
+                        <div class="invalid-feedback"> Please provide a valid Name </div>
+                    </div>
+                    <div class="form-group"> 
+                        <label for="exampleInputEmail1">Last Name</label> 
+                        <input type="text" class="form-control rounded-pill border-0" id="lastname"  placeholder="Enter last name"> 
+                        <div class="invalid-feedback"> Please provide a valid Name </div>
+                    </div>
+                    <div class="form-group"> 
+                        <label for="exampleInputEmail1">Phone Number</label> 
+                        <input type="text" class="form-control rounded-pill border-0" id="phoneNumber"  placeholder="Enter phone number"> 
+                        <div class="invalid-feedback"> Please provide a valid Name </div>
+                    </div>
+                    <div class="form-group"> 
+                        <label for="exampleInputEmail1" class="mb-0">Username</label> 
+                        <p class="text-secondary small mt-0">* username will be visible to public. You can not change username later.</p>
+                        <input type="text" class="form-control rounded-pill border-0" id="username" placeholder="Enter username"> 
+                        <div class="invalid-feedback"> Please provide a valid Username. </div>
+                    </div><div class="form-group"> 
+                        <label for="exampleInputEmail1">Email address</label> 
+                        <input type="text" class="form-control rounded-pill border-0" id="remail"  placeholder="Enter email"> 
+                        <div class="invalid-feedback"> Please provide a valid Email. </div>
+                    </div>
+                    <div class="form-group"> 
+                        <label for="exampleInputPassword1">Password</label> 
+                        <input type="password" class="form-control rounded-pill border-0" id="rpassword" placeholder="Password"> 
+                        <div class="invalid-feedback"> Please provide a valid Password. </div>
+                    </div>
+                    <input type="button" onclick="validate2()" class="btn btn-brown rounded-pill my-3" value="Create Account"/>
+                    <input type="button" onclick="runTime(), showCookie()" class="btn btn-brown rounded-pill my-3" value="GetCookie"/>
+                </form> 
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First Name :</td>
+                    <td id="1firstName"></td>
+                </tr>
+                <tr>
+                    <td>lastName :</td>
+                    <td id="1lastName"></td>
+                </tr>
+                <tr>
+                    <td>address :</td>
+                    <td id="1username"></td>
+                </tr>
+                <tr>
+                    <td>phoneNumber :</td>
+                    <td id="1phoneNumber"></td>
+                </tr>
+                <tr>
+                    <td>email :</td>
+                    <td id="1remail"></td>
+                </tr>
+                <tr>
+                    <td>Time :</td>
+                    <td id="1time"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

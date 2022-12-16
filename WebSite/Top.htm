@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <!-- Divyesh Raj
+       Description: The top page of the first page
+	              -->
+     <title>Top Page</title>
+     <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&amp;display=swap" rel="stylesheet">
+   
+     <script language="javascript" src="JS/login.js"></script>
+     <style>
+      .btn:not(:disabled):not(.disabled) 
+      {
+          cursor: pointer;
+      }
+
+      .btn-brown {
+          color: white;
+          background-image: linear-gradient(to left, rgb(128, 47, 0) 50%, rgb(163, 60, 0) 50%);
+          background-position-x: right;
+          background-position-y: center;
+          background-repeat: initial;
+          background-attachment: initial;
+          background-origin: initial;
+          background-clip: initial;
+          background-color: initial;
+          background-size: 200%;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-out;
+          transition-delay: 0s;
+          transition-property: all;
+      }
+
+      .rounded-pill {
+          border-radius: 50rem!important;
+      }
+
+      .btn{
+          display: inline-block;
+          font-weight:400;
+          text-align: center;
+          vertical-align: middle;
+          user-select: none;
+          border: 1px solid transparent;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+      }
+
+      input{
+          margin: 0;
+          font-family: inherit;
+          text-rendering: auto;
+          letter-spacing: normal;
+          word-spacing: normal;
+          text-transform: none;
+          text-indent: 0px;
+          text-shadow: none;
+          overflow: visible;
+      }
+      body{
+        font-family: 'Libre Baskerville', serif;
+        background-color: #802f00;
+      }
+   </style>
+ </head>
+
+ <body bgcolor="#802f00">
+  <table border="0" width="100%">
+    <tr>
+      <td align="center" bgcolor="#e3b89f" style="width:20%"> <img src="img/logo.png" alt="logo" width="30%" style="display:block;"></td>
+      <td align="center" bgcolor="#e3b89f" style="width:60%"> <h1 style="color:#802f00">HISTORY OF INDIA</h1> </td>
+      <td align="right"bgcolor="#e3b89f">
+      <div align="right" >
+        <table bgcolor="#e3b89f">
+            <tr>
+              <td valign="top" align="center" width="384">
+                <h1 style="color: #802f00;font-size: 1.7rem;">Member Login</h1>
+                    <form name="login_form">
+                    <table width="319">
+                        <tr>
+                          <td style="color:#802f00" width="50">Username</td>
+                          <td width="255">
+      	                    <input type="text" name="username" id="email" size="20"></td>
+                        </tr>
+                        <tr>
+                          <td style="color:#802f00" width="50">Password</td>
+                          <td width="255">
+                            <input maxlength="10" name="password" id="password" size="20" type="password"></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" align="center">
+                            <input  type="button" onclick="login()" class="btn btn-brown rounded-pill my-3" name="authenticate" value="Login"/>
+                        </tr>
+                    </table>
+                   </form>
+              </td>
+            </tr>
+        </table>
+      </div>
+    </td>
+
+    </tr>
+  </table>
+ </body>
+
+</html>
